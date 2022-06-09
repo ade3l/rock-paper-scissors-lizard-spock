@@ -56,3 +56,34 @@ function playRound(p1, p2){
         }
     }    
 }
+
+p1Score = 0;
+p2Score = 0;
+
+for(let i=0; i<5; i++){
+    let playerSelection = prompt("Enter").toLowerCase();
+    let computerSelection = computerPlay();
+    let roundResult = playRound(playerSelection, computerSelection);
+    console.log(playerSelection + " vs " + computerSelection);
+    if(roundResult[0] == 0){
+        p1Score++;
+        console.log("round won by: player 1");
+    }
+    
+    else if(roundResult[0] == 1){
+        p2Score++;
+        console.log("round won by: player 2");
+    }
+    else {
+        console.log("Draw");
+    }
+    
+}
+
+if(p1Score> p2Score){
+    console.log("Player 1 wins the game");
+}
+else{
+    console.log("Player 2 wins the game");
+
+}
