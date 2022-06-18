@@ -9,7 +9,7 @@ function computerPlay(){
     }
 }
 
-function playRound(p1, p2){
+function evalRound(p1, p2){
     if(p1=="rock"){
         switch(p2){
             case "rock": return [-1,""]; break; 
@@ -60,10 +60,10 @@ function playRound(p1, p2){
 p1Score = 0;
 p2Score = 0;
 
-for(let i=0; i<5; i++){
+function playRound(){
     let playerSelection = prompt("Enter").toLowerCase();
     let computerSelection = computerPlay();
-    let roundResult = playRound(playerSelection, computerSelection);
+    let roundResult = evalRound(playerSelection, computerSelection);
     console.log(playerSelection + " vs " + computerSelection);
     if(roundResult[0] == 0){
         p1Score++;
@@ -77,13 +77,16 @@ for(let i=0; i<5; i++){
     else {
         console.log("Draw");
     }
-    
+    if(p1==5 || p2==5)
+        declareResult;
 }
 
-if(p1Score> p2Score){
-    console.log("Player 1 wins the game");
-}
-else{
-    console.log("Player 2 wins the game");
+function declareResult(){
+    if(p1Score> p2Score){
+        console.log("Player 1 wins the game");
+    }
+    else{
+        console.log("Player 2 wins the game");
 
+    }
 }
