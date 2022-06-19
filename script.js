@@ -95,11 +95,13 @@ function playRound(selection){
 }
 
 function declareResult(){
+    userSel.innerText = " ";
+    compSel.innerText = " ";
     if(p1Score> p2Score){
-        console.log("Player 1 wins the game");
+        resultText.innerText = "You win!";
     }
     else{
-        console.log("Player 2 wins the game");
+        resultText.innerText = "Computer wins!";
     }
 }
 function initialiseGame(){
