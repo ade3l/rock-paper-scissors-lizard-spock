@@ -64,27 +64,27 @@ function evalRound(p1, p2){
 let p1Score;
 let p2Score;
 optionButtons = document.querySelectorAll(".option");
-let restartBtn = document.querySelector(".restart");
+let resultText = document.querySelector(".result");
+let userSel = document.querySelector(".userSel");
+let compSel = document.querySelector(".compSel");
 function playRound(selection){
+    userSel.innerText = `You picked ${selection}`;
     let playerSelection = selection;
     let computerSelection = computerPlay();
+    compSel.innerText = `Computer picked ${computerSelection}`;
     let roundResult = evalRound(playerSelection, computerSelection);
     console.log(playerSelection + " vs " + computerSelection);
     if(roundResult[0] == 0){
         p1Score+=1;
-        console.log("round won by: player 1");
-        console.log(p1Score)
     }
     
     else if(roundResult[0] == 1){
         p2Score+=1;
-        console.log("round won by: player 2");
-        console.log(p2Score)
-
     }
     else {
         console.log("Draw");
     }
+    resultText.innerText = `${p1Score} - ${p2Score}`;
     if(p1Score==5 || p2Score==5)
         {   
             declareResult();
