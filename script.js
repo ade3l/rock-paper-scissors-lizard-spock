@@ -8,7 +8,7 @@ function computerPlay(){
         case 4: return "spock"; break;
     }
 }
-
+//Function to evaluate player and computer inputs and return who wins
 function evalRound(p1, p2){
     if(p1=="rock"){
         switch(p2){
@@ -61,30 +61,30 @@ function evalRound(p1, p2){
         return [-1];
     }
 }
+
 let p1Score;
 let p2Score;
 optionButtons = document.querySelectorAll(".option");
 let resultText = document.querySelector(".result");
 let userSel = document.querySelector(".userSel");
 let compSel = document.querySelector(".compSel");
+
 function playRound(selection){
     userSel.innerText = `You picked ${selection}`;
     let playerSelection = selection;
     let computerSelection = computerPlay();
     compSel.innerText = `Computer picked ${computerSelection}`;
     let roundResult = evalRound(playerSelection, computerSelection);
-    console.log(playerSelection + " vs " + computerSelection);
+
     if(roundResult[0] == 0){
         p1Score+=1;
     }
-    
     else if(roundResult[0] == 1){
         p2Score+=1;
     }
-    else {
-        console.log("Draw");
-    }
+
     resultText.innerText = `${p1Score} - ${p2Score}`;
+    
     if(p1Score==5 || p2Score==5)
         {   
             declareResult();
