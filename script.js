@@ -3,7 +3,7 @@ function computerPlay(){
     switch(x){
         case 0: return "rock"; break;
         case 1: return "paper"; break;
-        case 2: return "scissor"; break;
+        case 2: return "scissors"; break;
         case 3: return "lizard"; break;
         case 4: return "spock"; break;
     }
@@ -54,31 +54,44 @@ function evalRound(p1, p2){
             case "lizard": return [1,"poisons"]; break; 
             case "spock": return [-1,""]; break; 
         }
-    }    
+    }   
+    else
+        {
+        console.log("invalid") ;
+        return [-1];
+    }
 }
-
-p1Score = 0;
-p2Score = 0;
-
-function playRound(){
-    let playerSelection = prompt("Enter").toLowerCase();
+let p1Score;
+let p2Score;
+optionButtons = document.querySelectorAll(".option");
+let restartBtn = document.querySelector(".restart");
+function playRound(selection){
+    let playerSelection = selection;
     let computerSelection = computerPlay();
     let roundResult = evalRound(playerSelection, computerSelection);
     console.log(playerSelection + " vs " + computerSelection);
     if(roundResult[0] == 0){
-        p1Score++;
+        p1Score+=1;
         console.log("round won by: player 1");
+        console.log(p1Score)
     }
     
     else if(roundResult[0] == 1){
-        p2Score++;
+        p2Score+=1;
         console.log("round won by: player 2");
+        console.log(p2Score)
+
     }
     else {
         console.log("Draw");
     }
-    if(p1==5 || p2==5)
-        declareResult;
+    if(p1Score==5 || p2Score==5)
+        {   
+            declareResult();
+            optionButtons.forEach(button => {
+                button.disabled = true;
+            })
+        }
 }
 
 function declareResult(){
@@ -87,6 +100,18 @@ function declareResult(){
     }
     else{
         console.log("Player 2 wins the game");
-
     }
 }
+function initialiseGame(){
+    p1Score = 0;
+    p2Score = 0;
+    optionButtons.forEach(button =>{
+        button.disabled=false;
+        button.addEventListener('click',()=>{
+            playRound(button.getAttribute('data-key'));});
+    });
+
+}
+
+
+initialiseGame();
