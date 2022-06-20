@@ -11,7 +11,7 @@ body{
     padding: 10px;
     transition: all .2s ease-in-out; 
 }
-.userOptions .optBox:hover{
+.userOptions .optBox:hover, .selected{
     transform: scale(1.1); 
 }
 .option , .compOption{

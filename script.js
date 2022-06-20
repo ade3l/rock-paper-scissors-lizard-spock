@@ -64,7 +64,8 @@ function evalRound(p1, p2){
 
 let p1Score;
 let p2Score;
-optionButtons = document.querySelectorAll(".option");
+let optionButtons = document.querySelectorAll(".userOptions .option");
+let computerOptions = document.querySelectorAll(".compOptions .option");
 let resultText = document.querySelector(".result");
 let userSel = document.querySelector(".userSel");
 let compSel = document.querySelector(".compSel");
@@ -74,6 +75,11 @@ function playRound(selection){
     let playerSelection = selection;
     let computerSelection = computerPlay();
     compSel.innerText = `Computer picked ${computerSelection}`;
+    computerOptions.forEach(optionButton =>{
+        if(optionButton.getAttribute('data-key')==computerSelection){
+            optionButton.parentElement.classList.add('selected');
+        }
+    });
     let roundResult = evalRound(playerSelection, computerSelection);
 
     if(roundResult[0] == 0){
@@ -110,6 +116,7 @@ function initialiseGame(){
     optionButtons.forEach(button =>{
         button.disabled=false;
         button.addEventListener('click',()=>{
+            button.parentElement.classList.add('selected')
             playRound(button.getAttribute('data-key'));});
     });
 
