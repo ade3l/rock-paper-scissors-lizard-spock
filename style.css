@@ -4,12 +4,19 @@ body{
     /* background-position:  ; */
     background-repeat: no-repeat;
     background-size: 100%;
-    color: white;
+    color: #EEF0F2;
 }
-
+.optBox{
+    border: 2px solid #EEC643;
+    padding: 10px;
+    transition: all .2s ease-in-out; 
+}
+.userOptions .optBox:hover{
+    transform: scale(1.1); 
+}
 .option , .compOption{
     height: auto;
-    max-width: 80px;
+    max-width: 50px;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(24deg) brightness(103%) contrast(106%);
 }
 .userOptions , .compOptions{
