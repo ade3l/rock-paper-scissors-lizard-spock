@@ -1,4 +1,22 @@
-.option{
+body{
+    min-height: 100vh;
+    background-image: linear-gradient(#1f2e4c,#171636);
+    /* background-position:  ; */
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: white;
+}
+
+.option , .compOption{
     height: auto;
     max-width: 80px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(24deg) brightness(103%) contrast(106%);
+}
+.userOptions , .compOptions{
+    display: flex;
+    gap: 20px;
+}
+.optionsContainer{
+    display: flex;
+    justify-content: space-around;
 }
