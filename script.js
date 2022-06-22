@@ -72,14 +72,24 @@ let compSel = document.querySelector(".compSel");
 
 function playRound(selection){
     userSel.innerText = `You picked ${selection}`;
+
+    //Disable the buttons. will be reenables before next round
+    optionButtons.forEach(button => {
+        button.disabled = true;
+        button.parentElement.classList.remove('hoverable');
+    })
+
     let playerSelection = selection;
     let computerSelection = computerPlay();
     compSel.innerText = `Computer picked ${computerSelection}`;
+
+    //Make computer selection option expand
     computerOptions.forEach(optionButton =>{
         if(optionButton.getAttribute('data-key')==computerSelection){
             optionButton.parentElement.classList.add('selected');
         }
     });
+
     let roundResult = evalRound(playerSelection, computerSelection);
 
     if(roundResult[0] == 0){
