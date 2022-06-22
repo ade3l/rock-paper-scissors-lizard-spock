@@ -69,7 +69,7 @@ let computerOptions = document.querySelectorAll(".compOptions .option");
 let resultText = document.querySelector(".result");
 let userSel = document.querySelector(".userSel");
 let compSel = document.querySelector(".compSel");
-
+let paused = false;
 function playRound(selection){
     userSel.innerText = `You picked ${selection}`;
 
@@ -78,6 +78,7 @@ function playRound(selection){
         button.disabled = true;
         button.parentElement.classList.remove('hoverable');
     })
+    paused =true;
 
     let playerSelection = selection;
     let computerSelection = computerPlay();
@@ -109,7 +110,18 @@ function playRound(selection){
             })
         }
 }
+function prepRound(){
+    //selected contains the spans with buttons
+    let selected = document.querySelectorAll(".selected");
 
+    selected.forEach(buttonSpans =>{
+        buttonSpans.classList.remove("selected");
+    })
+    optionButtons.forEach(button => {
+        button.disabled = false;
+        button.parentElement.classList.add('hoverable');
+    });
+}
 function declareResult(){
     userSel.innerText = " ";
     compSel.innerText = " ";
@@ -134,3 +146,8 @@ function initialiseGame(){
 
 
 initialiseGame();
+window.addEventListener('keydown',()=>{
+    if(paused){
+        prepRound();
+    }
+})
