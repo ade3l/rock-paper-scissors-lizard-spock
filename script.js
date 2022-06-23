@@ -65,11 +65,12 @@ function evalRound(p1, p2){
 let p1Score;
 let p2Score;
 let optionButtons = document.querySelectorAll(".userOptions .option");
-let computerOptions = document.querySelectorAll(".compOptions .option");
+let computerOptions = document.querySelector(".compOptions");
 let userScore = document.querySelector("#userScore");
 let compScore = document.querySelector("#compScore");
 let userSel = document.querySelector(".userSel");
 let compSel = document.querySelector(".compSel");
+
 let paused = false;
 function playRound(selection){
     userSel.innerText = `You picked ${selection}`;
@@ -85,12 +86,17 @@ function playRound(selection){
     let computerSelection = computerPlay();
     compSel.innerText = `Computer picked ${computerSelection}`;
 
-    //Make computer selection option expand
-    computerOptions.forEach(optionButton =>{
-        if(optionButton.getAttribute('data-key')==computerSelection){
-            optionButton.parentElement.classList.add('selected');
-        }
-    });
+    // Create the 
+    let span = document.createElement('span');
+    span.classList.add('optBox');
+    let input = document.createElement('input');
+    input.setAttribute('type','image');
+    input.setAttribute('src',"./assets/"+computerSelection+".png");
+    input.setAttribute('disabled',"disabled");
+    input.classList.add('option');
+    span.appendChild(input);
+    computerOptions.appendChild(span);
+    
 
     let roundResult = evalRound(playerSelection, computerSelection);
 
