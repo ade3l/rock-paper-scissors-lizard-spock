@@ -5,6 +5,45 @@ body{
     background-repeat: no-repeat;
     background-size: 100%;
     color: #EEF0F2;
+    font-family: 'Varela', sans-serif;
+}
+h1{
+    max-width: 200px;
+}
+.topContainer{
+    display: flex;
+    align-items: center;
+    border: 2px solid #555e77;
+    border-radius: 10px;
+    justify-content: space-between;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+.rightSide{
+    display: flex;
+}
+.scoreContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fefcff;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 0px 40px;
+    color:#343d9e;
+    font-weight: bold;
+
+    border-radius: 10px;
+    
+}
+#userScore , #compScore{
+    color: #343857;
+    font-weight: 1200;
+    font-size: xx-large;
 }
 .optBox{
     border: 2px solid #EEC643;
@@ -12,7 +51,7 @@ body{
     transition: all .2s ease-in-out; 
 }
 .userOptions .hoverable:hover, .selected{
-    transform: scale(1.1); 
+    transform: scale(1.1);
 }
 .option , .compOption{
     height: auto;
@@ -26,4 +65,5 @@ body{
 .optionsContainer{
     display: flex;
     justify-content: space-around;
+    margin-top: 70px;
 }

@@ -66,7 +66,8 @@ let p1Score;
 let p2Score;
 let optionButtons = document.querySelectorAll(".userOptions .option");
 let computerOptions = document.querySelectorAll(".compOptions .option");
-let resultText = document.querySelector(".result");
+let userScore = document.querySelector("#userScore");
+let compScore = document.querySelector("#compScore");
 let userSel = document.querySelector(".userSel");
 let compSel = document.querySelector(".compSel");
 let paused = false;
@@ -100,7 +101,8 @@ function playRound(selection){
         p2Score+=1;
     }
 
-    resultText.innerText = `${p1Score} - ${p2Score}`;
+    userScore.innerText = `${p1Score}`;
+    compScore.innerText = `${p2Score}`;
     
     if(p1Score==5 || p2Score==5)
         {   
