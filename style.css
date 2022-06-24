@@ -61,6 +61,7 @@ h1{
 .userOptions , .compOptions{
     display: flex;
     gap: 20px;
+    transition: all .2s linear;
 }
 .optionsContainer{
     display: flex;

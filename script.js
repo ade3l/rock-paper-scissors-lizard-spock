@@ -65,15 +65,13 @@ function evalRound(p1, p2){
 let p1Score;
 let p2Score;
 let optionButtons = document.querySelectorAll(".userOptions .option");
-let computerOptions = document.querySelector(".compOptions");
+let computerOptionsDiv = document.querySelector(".compOptions");
 let userScore = document.querySelector("#userScore");
 let compScore = document.querySelector("#compScore");
-let userSel = document.querySelector(".userSel");
-let compSel = document.querySelector(".compSel");
+let msg = document.querySelector(".message");
 
 let paused = false;
 function playRound(selection){
-    userSel.innerText = `You picked ${selection}`;
 
     //Disable the buttons. will be reenables before next round
     optionButtons.forEach(button => {
@@ -84,19 +82,19 @@ function playRound(selection){
 
     let playerSelection = selection;
     let computerSelection = computerPlay();
-    compSel.innerText = `Computer picked ${computerSelection}`;
 
-    // Create the 
+    // Create the computer selection element
     let span = document.createElement('span');
     span.classList.add('optBox');
+    span.setAttribute('id', "computerSelection");
     let input = document.createElement('input');
     input.setAttribute('type','image');
     input.setAttribute('src',"./assets/"+computerSelection+".png");
     input.setAttribute('disabled',"disabled");
     input.classList.add('option');
     span.appendChild(input);
-    computerOptions.appendChild(span);
-    
+    computerOptionsDiv.appendChild(span);
+    span.style.transform = 'scale(1.1)';
 
     let roundResult = evalRound(playerSelection, computerSelection);
 
@@ -109,7 +107,6 @@ function playRound(selection){
 
     userScore.innerText = `${p1Score}`;
     compScore.innerText = `${p2Score}`;
-    
     if(p1Score==5 || p2Score==5)
         {   
             declareResult();
@@ -117,8 +114,15 @@ function playRound(selection){
                 button.disabled = true;
             })
         }
+    msg.innerText = "Press any key to continue";
+
 }
 function prepRound(){
+    if(p1Score>=5 || p2Score>=5) return;
+    msg.innerText = "Pick your choice";
+    let insertedCompOption = document.querySelector('#computerSelection');
+    insertedCompOption.parentElement.removeChild(insertedCompOption);
+
     //selected contains the spans with buttons
     let selected = document.querySelectorAll(".selected");
 
@@ -131,13 +135,13 @@ function prepRound(){
     });
 }
 function declareResult(){
-    userSel.innerText = " ";
+    msg.innerText = " ";
     compSel.innerText = " ";
     if(p1Score> p2Score){
-        resultText.innerText = "You win!";
+        msg.innerText = "You win!";
     }
     else{
-        resultText.innerText = "Computer wins!";
+        msg.innerText = "Computer wins!";
     }
 }
 function initialiseGame(){
@@ -149,12 +153,13 @@ function initialiseGame(){
             button.parentElement.classList.add('selected')
             playRound(button.getAttribute('data-key'));});
     });
-
+    msg.innerText = "Pick your choice";
 }
 
 
 initialiseGame();
 window.addEventListener('keydown',()=>{
+    console.log('hel');
     if(paused){
         prepRound();
     }
