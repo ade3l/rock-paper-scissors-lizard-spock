@@ -47,6 +47,7 @@ h1{
 }
 .optBox{
     border: 2px solid #EEC643;
+    border-radius: 10px;
     padding: 10px;
     transition: all .2s ease-in-out; 
 }

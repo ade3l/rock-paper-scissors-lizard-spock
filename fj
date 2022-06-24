@@ -1,0 +1,113 @@
+[33mcommit 07ecc1c21133a894d1ce609ea21e048006d30a78[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;32mrpsls-ui[m[33m)[m
+Author: Adeel <adeelasakkeer@gmail.com>
+Date:   Fri Jun 24 20:56:16 2022 +0530
+
+    Final changes
+
+[33mcommit b72e97e8b8064792e1642b009643cc01e220eef5[m
+Author: Adeel <adeelasakkeer@gmail.com>
+Date:   Thu Jun 23 21:18:03 2022 +0530
+
+    added code to insert computer selection into DOM
+
+[33mcommit 73844058c585e7fbef5f59bf80fea64e2518b3b7[m
+Author: Adeel <adeelasakkeer@gmail.com>
+Date:   Thu Jun 23 20:50:06 2022 +0530
+
+    title bar
+
+[33mcommit 342084fac1a683dbcf58f3b0ad1ee9564b8b6baa[m
+Author: Adeel <adeelasakkeer@gmail.com>
+Date:   Wed Jun 22 18:24:12 2022 +0300
+
+    code to reenable buttons on key press
+
+[33mcommit ce60c7c31cdf4b749ec2fece37940220290b7b20[m[33m ([m[1;31morigin/rpsls-ui[m[33m)[m
+Author: Adeel <adeelasakkeer@gmail.com>
+Date:   Wed Jun 22 13:09:48 2022 +0300
+
+    added code to disable buttons after user chooses
+
+[33mcommit 3ed1fd49d09a052a5cb9d7d43fe89938099b67e2[m
+Author: Adeel <adeelasakkeer@gmail.com>
+Date:   Mon Jun 20 16:08:55 2022 +0300
+
+    computer selection scaling animation
+
+[33mcommit 03aa4e885322cde32f358f4e6180d24655c28820[m
+Author: Adeel <adeelasakkeer@gmail.com>
+Date:   Mon Jun 20 14:40:16 2022 +0300
+
+    added hover effect
+
+[33mcommit e8c873c51de117a5c5744a18f385f7951eb9b740[m
+Author: Adeel <adeelasakkeer@gmail.com>
+Date:   Mon Jun 20 11:46:02 2022 +0300
+
+    added computer options image and styles
+
+[33mcommit 1841caa7deee22f44cb308c8dc7ea88d262bd676[m
+Author: Adeel <adeelasakkeer@gmail.com>
+Date:   Mon Jun 20 11:08:06 2022 +0300
+
+    added images into page
+
+[33mcommit ee831ee23fe5bb328603aba8fce80349672680c7[m
+Author: Adeel <adeelasakkeer@gmail.com>
+Date:   Mon Jun 20 10:59:08 2022 +0300
+
+    Added assets
+
+[33mcommit dee0f938bd0a0afee4cf30e404fc5e751b7b531f[m
+Author: Adeel <adeelasakkeer@gmail.com>
+Date:   Sun Jun 19 14:51:25 2022 +0300
+
+    Cleaned up code
+
+[33mcommit 4c1794723725772b972a82709e3239ba0b1fbb3f[m
+Author: Adeel <adeelasakkeer@gmail.com>
+Date:   Sun Jun 19 14:48:52 2022 +0300
+
+    game result display added
+
+[33mcommit 8ebf6a3aaf208a5f6a9424a67caa773ffa1478a9[m
+Author: Adeel <adeelasakkeer@gmail.com>
+Date:   Sun Jun 19 14:45:38 2022 +0300
+
+    Added round result and selection display
+
+[33mcommit abc056269b1f77e9ce613d678389fc284fc1cec6[m
+Author: Adeel <adeelasakkeer@gmail.com>
+Date:   Sun Jun 19 14:30:20 2022 +0300
+
+    added button click event handlers
+
+[33mcommit 920841379e472541ba699fcaec5e7a8427bce80d[m
+Author: Adeel <adeelasakkeer@gmail.com>
+Date:   Sun Jun 19 14:25:48 2022 +0300
+
+    added option buttons
+
+[33mcommit 9d998e974f889e58f1363f49b942ea43478039ae[m
+Author: Adeel <adeelasakkeer@gmail.com>
+Date:   Sat Jun 18 14:48:29 2022 +0300
+
+    Removed logic that plays exactly five rounds
+
+[33mcommit 31b164c5614b588f0c2d74398ea886f009e26ab3[m[33m ([m[1;31morigin/temp[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Adeel <adeelasakkeer@gmail.com>
+Date:   Thu Jun 9 23:09:21 2022 +0300
+
+    RPSLS on CLI finished
+
+[33mcommit 08f60490d6b90a8e9a3bed38ca9931817a6d3b9a[m
+Author: Adeel <adeelasakkeer@gmail.com>
+Date:   Thu Jun 9 23:08:24 2022 +0300
+
+    Code to play a round added
+
+[33mcommit 91f7f29bd1f9184d9916ab3473c77fdccc1f4a46[m
+Author: Adeel <adeelasakkeer@gmail.com>
+Date:   Wed Jun 8 18:03:30 2022 +0300
+
+    Computer play code added
